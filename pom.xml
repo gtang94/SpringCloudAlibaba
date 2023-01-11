@@ -5,6 +5,8 @@
     <modules>
         <module>order</module>
         <module>stock</module>
+        <module>order-openfeign</module>
+        <module>product</module>
     </modules>
 
     <!--springboot的版本管理器, 也可以放在dependencyManagement中-->
