@@ -1,5 +1,5 @@
 server:
-  port: 8021
+  port: 8031
 
 spring:
   application:
@@ -11,3 +11,7 @@ spring:
         username: nacos
         password: nacos
         namespace: public
+
+stock-service:
+  ribbon:
+    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule

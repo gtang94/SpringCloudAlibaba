@@ -12,9 +12,9 @@ public class ProductController {
     @Value("${server.port}")
     String port;
 
-    @RequestMapping("/{id}")
-    public String get(@PathVariable Integer id) {
-        System.out.println("查询商品: " + id);
-        return "查询商品" + id + ":" + port;
+    @RequestMapping("show/{id}")
+    public String show(@PathVariable Integer id) {
+        System.out.println("Product Port: " + port);
+        return "查询商品(" + id + ")";
     }
 }

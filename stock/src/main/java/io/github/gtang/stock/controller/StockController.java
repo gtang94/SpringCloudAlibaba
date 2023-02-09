@@ -1,6 +1,8 @@
 package io.github.gtang.stock.controller;
 
 
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -8,9 +10,12 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/stock")
 public class StockController {
 
-    @RequestMapping("/reduce")
-    public String reduce() {
-        System.err.println("扣减库存");
-        return "扣减库存";
+    @Value("${server.port}")
+    String port;
+
+    @RequestMapping("/reduce/{id}")
+    public String reduce(@PathVariable("id")Long id) {
+        System.out.println("Stock Port: " + port);
+        return "扣减库存(" + id + ")";
     }
 }
