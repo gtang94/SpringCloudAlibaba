@@ -1,12 +1,12 @@
-package io.github.gtang.stock;
+package io.github.gtang.common;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class StockApplication {
+public class CommonApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(StockApplication.class, args);
+        SpringApplication.run(CommonApplication.class, args);
     }
 }
