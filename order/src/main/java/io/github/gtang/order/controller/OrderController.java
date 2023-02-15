@@ -62,4 +62,14 @@ public class OrderController {
 
         return order;
     }
+
+    @RequestMapping("/load-balance/custom-show/{oid}")
+    public Order loadBalanceCustomShow(@PathVariable("oid") Integer oid) {
+
+    }
+
+    @RequestMapping("/load-balance/ribbon/{oid}")
+    public Order loadBalanceRibbonShow() {
+
+    }
 }

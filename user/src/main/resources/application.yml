@@ -3,7 +3,7 @@ server:
 
 spring:
   application:
-    name: stock-service
+    name: user-service
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://localhost:3306/springcloudalibaba?serverTimezone=UTC&characterEncoding=utf-8&useSSL=true
@@ -21,6 +21,10 @@ spring:
         username: nacos
         password: nacos
         namespace: public
+    sentinel:
+      transport:
+        port: 9997
+        dashboard: localhost:8080
 
 stock-service:
   ribbon:
