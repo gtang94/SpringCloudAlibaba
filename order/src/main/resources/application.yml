@@ -1,7 +1,5 @@
 server:
   port: 8091
-  tomcat:
-    max-threads: 10
 
 spring:
   application:
@@ -27,3 +25,22 @@ spring:
       transport:
         port: 9999
         dashboard: localhost:8080
+      filter:
+        enabled: false
+      datasource:
+        # 流控
+        sentinel-rule-flow:
+          nacos:
+            serverAddr: 127.0.0.1:8848
+            username: nacos
+            password: nacos
+            dataId: sentinel-rule-flow
+            ruleType: flow
+        # 降级
+#        sentinel-rule-degrade:
+#          nacos:
+#            serverAddr: 127.0.0.1:8848
+#            username: nacos
+#            password: nacos
+#            dataId: sentinel-rule-degrade
+#            ruleType: degrade

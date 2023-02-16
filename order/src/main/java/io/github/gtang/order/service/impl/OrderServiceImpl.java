@@ -1,5 +1,6 @@
 package io.github.gtang.order.service.impl;
 
+import com.alibaba.csp.sentinel.annotation.SentinelResource;
 import io.github.gtang.common.entity.Order;
 import io.github.gtang.order.dao.OrderDao;
 import io.github.gtang.order.service.OrderService;
@@ -18,6 +19,7 @@ public class OrderServiceImpl implements OrderService {
     }
 
     @Override
+    @SentinelResource("testSentinelResource")
     public Order show(Integer oid) {
         return orderDao.findById(oid).get();
     }

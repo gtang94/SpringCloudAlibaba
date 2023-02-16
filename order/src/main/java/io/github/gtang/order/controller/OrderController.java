@@ -63,13 +63,12 @@ public class OrderController {
         return order;
     }
 
-    @RequestMapping("/load-balance/custom-show/{oid}")
-    public Order loadBalanceCustomShow(@PathVariable("oid") Integer oid) {
+    @RequestMapping("/sentinel-resource-show/{oid}")
+    public Order sentinelResourceShow(@PathVariable("oid") Integer oid) {
+        log.info("调用Order服务, 服务端口: {}", port);
 
-    }
+        Order order = orderService.show(oid);
 
-    @RequestMapping("/load-balance/ribbon/{oid}")
-    public Order loadBalanceRibbonShow() {
-
+        return order;
     }
 }
